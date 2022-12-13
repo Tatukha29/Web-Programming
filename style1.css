@@ -429,3 +429,207 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
     margin-top: 7px;
     margin-bottom: -10px;
 }
+
+.container_person {
+    width: 70%;
+    margin: 20px auto 50px;
+    /*border: 10px solid red;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: red;*/
+}
+
+.container_person>.card_person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.right_info_person {
+    /*background: aqua;*/
+    width: 150px;
+    height: 200px;
+    margin: 15px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    background-size: cover;
+    position: relative;
+}
+.person_info {
+    width: 90%;
+    height: auto;
+    background: #393939;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    /*margin-top: 10px;*/
+}
+.left_info_person {
+    background: grey;
+    width: 150px;
+    height: 200px;
+    margin: 15px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    background-size: cover;
+    position: relative;
+}
+.ava_person{
+    border-radius: 70px;
+    height: 150px;
+    width: 150px;
+    background-size: cover;
+}
+
+.text-person {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.text-person h1{
+    font-size: 32px;
+    margin-top: 6px;
+}
+.text-person h2{
+    font-size: 17px;
+    margin-top: 13px;
+    /*margin-left: 13px;*/
+}
+.text-person p{
+    font-size: 16px;
+    /*margin-left: 2px;*/
+    margin-top: -5px;
+    margin-bottom: 30px;
+}
+
+.person-bottoms{
+    margin-top: -20px;
+}
+
+.person_banner {
+    width: 100%;
+}
+
+#new-task-input {
+    width: 75%;
+    height: 30px;
+    background: lightgrey;
+    border-radius: 8px;
+    border: #393939;
+    font-size: 16px;
+    padding: 0 10px;
+    color: #393939;
+}
+
+#new-task-submit {
+    width: 100px;
+    height: 30px;
+    background: #C69E6C;
+    color: #1E1E1E;
+    font-size: 16px;
+    border-radius: 7px;
+    border: none;
+}
+
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgrey;
+    width: 77%;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+.task .text {
+    /*width: 100%;*/
+    width: 300px;
+    height: 30px;
+    background: lightgrey;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    padding: 0 10px;
+    color: #393939;
+}
+
+.task .edit {
+    width: 80px;
+    height: 30px;
+    background: #C69E6C;
+    color: #1E1E1E;
+    font-size: 14px;
+    border-radius: 7px;
+    margin-right: 5px;
+    border: none;
+}
+
+.task .delete {
+    width: 70px;
+    height: 30px;
+    background: #C69E6C;
+    color: #1E1E1E;
+    font-size: 14px;
+    border-radius: 7px;
+    border: none;
+}
+
+@media (max-width: 700px) {
+    .person_info {
+        width: 90%;
+        height: auto;
+        background: #393939;
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        /*margin-top: 10px;*/
+    }
+
+    .right_info_person {
+        /*background: aqua;*/
+        width: 150px;
+        height: 200px;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        background-size: cover;
+        position: relative;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    #new-task-input {
+        width: 60%;
+        height: 30px;
+        background: lightgrey;
+        border-radius: 8px;
+        border: #393939;
+        font-size: 16px;
+        padding: 0 10px;
+        color: #393939;
+        border: none
+    }
+
+    #new-task-submit {
+        width: 100px;
+        height: 30px;
+        background: #C69E6C;
+        color: #1E1E1E;
+        font-size: 16px;
+        border-radius: 7px;
+        border: none;
+        margin-top: 5px;
+    }
+
+    .task .text {
+        /*width: 100%;*/
+        width: 100px;
+        height: 30px;
+        background: lightgrey;
+        border-radius: 8px;
+        border: none;
+        font-size: 16px;
+        padding: 0 10px;
+        color: #393939;
+    }
+}

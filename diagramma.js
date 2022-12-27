@@ -11,7 +11,7 @@ var chart = new Chart(ctx, {
         datasets: [{
             label: 'Общее количество работ',
             data: [10, 25, 13, 20],
-            backgroundColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)','rgb(255, 205, 86)', 'rgb(155, 205, 86)'],
+            backgroundColor: ['rgb(212, 175, 55)', 'rgb(94, 49, 40)','rgb(190, 190, 190)', 'rgb(208, 176, 132)'],
         }]
     },
     options: optionsPie

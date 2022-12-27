@@ -32,7 +32,7 @@ function create_el(list_el, input, date, task) {
     task_td_el.innerText = task;
 
     const task_time_el = document.createElement('td');
-    task_time_el.classList.add('textTime');
+    task_time_el.classList.add('text');
     task_time_el.type = 'text';
     task_time_el.innerText = date;
 

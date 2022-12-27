@@ -260,6 +260,12 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
     margin-top: 10px;
 }
 
+.fanfic-page-text {
+    align-items: center;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
 .fanfic_border_slash {
     border-left-color: #3d7695 ;
     border-left-style: solid;
@@ -413,7 +419,7 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
     border-radius: 0 0 4px 4px;
     font-size: 13px;
     /*padding-left: 9px;*/
-    height: 50px;
+    height: 150px;
     box-sizing: border-box;
     /*height: auto;*/
     vertical-align: bottom;
@@ -450,7 +456,7 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
 .right_info_person {
     /*background: aqua;*/
     width: 150px;
-    height: 200px;
+    height: 300px;
     margin: 15px;
     border-radius: 5px;
     flex-wrap: wrap;
@@ -464,6 +470,7 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
     margin-right: auto;
     margin-left: auto;
     display: flex;
+    /*padding-top: 50px;*/
     /*margin-top: 10px;*/
 }
 .left_info_person {
@@ -505,7 +512,7 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
 }
 
 .person-bottoms{
-    margin-top: -20px;
+    margin-top: -5px;
 }
 
 .person_banner {
@@ -632,4 +639,11 @@ input[type="search"]::-webkit-input-placeholder { color: #616161; }
         padding: 0 10px;
         color: #393939;
     }
+}
+
+.meow-card {
+    max-width: 400px;
+}
+.meow-card img {
+    max-width: 160px;
 }

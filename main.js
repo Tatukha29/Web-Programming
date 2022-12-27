@@ -17,65 +17,72 @@ function calculateLoadTime() {
     })
 }
 
-window.addEventListener('load', () => {
+function create_el(list_el, input, date, task) {
+    const task_el = document.createElement('div');
+    task_el.classList.add('task');
+
+    const task_content_el = document.createElement('div');
+    task_content_el.classList.add('content');
+
+    task_el.appendChild(task_content_el);
+
+    const task_td_el = document.createElement('td');
+    task_td_el.classList.add('text');
+    task_td_el.type = 'text';
+    task_td_el.innerText = task;
+
+    const task_time_el = document.createElement('td');
+    task_time_el.classList.add('textTime');
+    task_time_el.type = 'text';
+    task_time_el.innerText = date;
+
+
+    task_content_el.appendChild(task_time_el);
+    task_content_el.appendChild(task_td_el);
+
+    const task_actions_el = document.createElement('div');
+    task_actions_el.classList.add('actions');
+
+    const task_delete_el = document.createElement('button');
+    task_delete_el.classList.add('delete');
+    task_delete_el.innerText = 'Удалить';
+
+    task_actions_el.appendChild(task_delete_el);
+    task_el.appendChild(task_actions_el);
+    list_el.appendChild(task_el);
+    input.value = '';
+
+    task_delete_el.addEventListener('click', (e) => {
+        list_el.removeChild(task_el);
+        localStorage.removeItem(date);
+    });
+    return task_el
+}
+
+window.addEventListener('load', (key, value) => {
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
     const list_el = document.querySelector("#tasks");
+
+    for (let i = 0; i < localStorage.length; i++) {
+        key = localStorage.key(i);
+        value = localStorage.getItem(key);
+        let el = create_el(list_el, input, key, value);
+    }
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const task = input.value;
-
-        const task_el = document.createElement('div');
-        task_el.classList.add('task');
-
-        const task_content_el = document.createElement('div');
-        task_content_el.classList.add('content');
-
-        task_el.appendChild(task_content_el);
-
-        const task_input_el = document.createElement('input');
-        task_input_el.classList.add('text');
-        task_input_el.type = 'text';
-        task_input_el.value = task;
-        task_input_el.setAttribute('readonly', 'readonly');
-
-        task_content_el.appendChild(task_input_el);
-
-        const task_actions_el = document.createElement('div');
-        task_actions_el.classList.add('actions');
-
-        const task_edit_el = document.createElement('button');
-        task_edit_el.classList.add('edit');
-        task_edit_el.innerText = 'Редакт.';
-
-        const task_delete_el = document.createElement('button');
-        task_delete_el.classList.add('delete');
-        task_delete_el.innerText = 'Удалить';
-
-        task_actions_el.appendChild(task_edit_el);
-        task_actions_el.appendChild(task_delete_el);
-
-        task_el.appendChild(task_actions_el);
-
-        list_el.appendChild(task_el);
-
-        input.value = '';
-
-        task_edit_el.addEventListener('click', (e) => {
-            if (task_edit_el.innerText.toLowerCase() == "редакт.") {
-                task_edit_el.innerText = "Сохранить";
-                task_input_el.removeAttribute("readonly");
-                task_input_el.focus();
-            } else {
-                task_edit_el.innerText = "Редакт.";
-                task_input_el.setAttribute("readonly", "readonly");
-            }
-        });
-
-        task_delete_el.addEventListener('click', (e) => {
-            list_el.removeChild(task_el);
-        });
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const day = date.getDay();
+        const hour = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        const allTime = year + "." + month + "." + day + "-" + hour + ":" + minutes + ":" + seconds;
+        localStorage.setItem(allTime, task);
+        let element = create_el(list_el, input, allTime, task);
     });
 });
